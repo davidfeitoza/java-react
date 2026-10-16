@@ -1,4 +1,4 @@
-package org.example;
+package br.com.curso.aula01;
 
 import java.util.Scanner;
 
