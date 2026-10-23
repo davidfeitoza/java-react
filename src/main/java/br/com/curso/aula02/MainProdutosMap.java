@@ -174,4 +174,40 @@ public class MainProdutosMap {
             }
         }
     }
+
+    private static void relatorio() {
+
+        if (produtos.isEmpty()) {
+            System.out.println("Nenhum produto cadastrado.");
+            return;
+        }
+
+        Produto maisCaro = null;
+        Produto maiorQuantidade = null;
+        double total = 0;
+
+        for (Produto produto : produtos.values()) {
+
+            if (maisCaro == null
+                    || produto.getPreco() > maisCaro.getPreco()) {
+                maisCaro = produto;
+            }
+
+            if (maiorQuantidade == null
+                    || produto.getQuantidade()
+                    > maiorQuantidade.getQuantidade()) {
+                maiorQuantidade = produto;
+            }
+
+            total += produto.valorTotalEmEstoque();
+        }
+
+        System.out.println("===== RELATÓRIO =====");
+        System.out.println("Produto mais caro: " + maisCaro);
+        System.out.println("Maior quantidade: " + maiorQuantidade);
+
+        System.out.printf(
+                "Valor total do estoque: R$ %.2f%n", total
+        );
+    }
 }
