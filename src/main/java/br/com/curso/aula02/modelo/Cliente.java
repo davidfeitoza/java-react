@@ -1,7 +1,6 @@
 package br.com.curso.aula02.modelo;
 
 public class Cliente {
-
     private int id;
     private String nome;
     private String email;
